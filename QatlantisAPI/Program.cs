@@ -31,6 +31,14 @@ app.MapGet("/", async (DnDContext db) => await db.Customers.Include(e => e.Cases
 
 app.MapGet("/api/cases", async (DnDContext db) => await db.Cases.ToListAsync());
 
+app.MapPost("/api/cases", async (DnDContext db, Case cases) =>
+{
+    await db.Cases.AddAsync(cases);
+    await db.SaveChangesAsync();
+
+    return Results.Ok(cases);
+});
+
 app.MapGet("/api/customer", async (DnDContext db) => await db.Customers.Include(e => e.Cases).ToListAsync());
 
 app.MapGet("/api/customer/{id}", async (DnDContext db, int id) => await db.Customers.FirstOrDefaultAsync(e => e.Id == id));
