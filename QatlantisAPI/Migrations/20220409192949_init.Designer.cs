@@ -11,8 +11,8 @@ using QatlantisAPI.models;
 namespace QatlantisAPI.Migrations
 {
     [DbContext(typeof(DnDContext))]
-    [Migration("20220406120849_initialize")]
-    partial class initialize
+    [Migration("20220409192949_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,12 @@ namespace QatlantisAPI.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("endDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("startDate")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
@@ -66,12 +72,6 @@ namespace QatlantisAPI.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("endDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("startDate")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

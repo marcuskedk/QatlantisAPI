@@ -41,6 +41,12 @@ namespace QatlantisAPI.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime>("endDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("startDate")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
@@ -63,12 +69,6 @@ namespace QatlantisAPI.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("endDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("startDate")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

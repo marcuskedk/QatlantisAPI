@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace QatlantisAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class initialize : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,9 +19,7 @@ namespace QatlantisAPI.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     Address = table.Column<string>(type: "TEXT", nullable: true),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
-                    startDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    endDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    Email = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,6 +50,8 @@ namespace QatlantisAPI.Migrations
                     Description = table.Column<string>(type: "TEXT", nullable: true),
                     Price = table.Column<decimal>(type: "TEXT", nullable: false),
                     Status = table.Column<bool>(type: "INTEGER", nullable: false),
+                    startDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    endDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     CustomerId = table.Column<int>(type: "INTEGER", nullable: true),
                     EmployeeId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
